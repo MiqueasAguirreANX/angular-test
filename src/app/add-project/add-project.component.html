@@ -1,0 +1,76 @@
+<div class="card add">
+    <div class="row block">
+        <span class="icon-text" routerLink="/">
+            <span class="icon">
+                <i class="fas fa-arrow-left"></i>
+            </span>
+            <span class="subtitle is-6">Back</span>
+        </span>
+        <div class="info">
+            <h5 class="title is-4">Add Project</h5>
+        </div>
+    </div>
+</div>
+
+<div class="card add-form">
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+        <div class="field">
+            <label class="label">Name</label>
+            <div class="control">
+              <input class="input is-danger" required type="text" placeholder="Name" id="name" formControlName="name">
+            </div>
+        </div>
+          
+        <div class="field">
+            <label class="label">Description</label>
+            <div class="control">
+              <input class="input is-danger" required type="text" placeholder="Description" id="description" formControlName="description">
+            </div>
+        </div>
+          
+        <div class="field">
+            <label class="label">Manager</label>
+            <div class="control">
+                <div class="select is-danger">
+                <select id="manager" formControlName="manager" required>
+                    <option>Ignacio Truffa</option>
+                    <option>Other</option>
+                </select>
+                </div>
+            </div>
+        </div>
+          
+        <div class="field">
+            <label class="label">Assigned to</label>
+            <div class="control">
+                <div class="select is-danger">
+                <select id="assignedTo" formControlName="assignedTo" required>
+                    <option>Ignacio Truffa</option>
+                    <option>Other</option>
+                </select>
+                </div>
+            </div>
+        </div>
+    
+        <div class="field">
+            <label class="label">Status</label>
+            <div class="control">
+                <div class="select is-danger">
+                <select id="status" formControlName="status" required>
+                    <option>Enabled</option>
+                    <option>Suspense</option>
+                    <option>Disabled</option>
+                </select>
+                </div>
+            </div>
+        </div>
+        
+          
+        <div class="field is-grouped">
+            <div class="control">
+                <button class="button is-danger" type="submit">Create Project</button>
+            </div>
+        </div>
+    </form>
+    
+</div>

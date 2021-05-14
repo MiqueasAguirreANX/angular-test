@@ -1,0 +1,38 @@
+<div class="project">
+    <div class="row" style="justify-content: space-between;">
+        <div class="info">
+            <p class="name subtitle is-6">{{project.name}}</p>
+            <p class="created-at">Creation date: {{project.createdAt ? project.createdAt.toString().slice(0, 10) : "Dont have"}}</p>
+        </div>
+        <div class="menu-icon">
+            <div class="dropdown is-right" #drop>
+                <div class="dropdown-trigger">
+                  <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                    <span class="icon" (click)="openCloseDrop(drop)">
+                        <i class="fas fa-2x fa-ellipsis-v"></i>
+                    </span>
+                  </button>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                  <div class="dropdown-content">
+                    <a class="dropdown-item" [routerLink]="['/edit', project.id]">
+                      Edit
+                    </a>
+                    <a class="dropdown-item" (click)="deleteItem(project.id)">
+                      Delete
+                    </a>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="image is-32x32">
+            <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+        </div>
+        <div class="manager">
+            <p>{{project.manager}}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="card home">
+    <div class="row block">
+        <div class="info">
+            <h5 class="subtitle is-5">My Projects</h5>
+        </div>
+        <div class="add-project-button">
+            <button class="button is-danger" routerLink="/add">Add project</button>
+        </div>
+    </div>
+</div>
+
+<div class="card projects">
+    <app-project *ngFor="let project of projects; let i = index" [project]="project"></app-project>
+</div>
